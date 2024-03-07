@@ -23,6 +23,17 @@ input, select {
   box-sizing: border-box;
 }
 
+input[type="checkbox"] {
+  width: auto;
+  margin-top: 0;
+  margin-right: 8px;
+}  
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
 form {
   text-align: left;
 }

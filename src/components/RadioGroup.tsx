@@ -4,7 +4,6 @@ interface RadioProps {
     value: string;
     id: string;
     validationRules: Record<string, unknown>;
-    label: string;
     checked?: boolean;
   }
   
@@ -38,11 +37,11 @@ interface RadioProps {
       <div style={{ marginBottom: errors?.[id] ? '8px' : '29px' }}>
       <p className="radio-label">{label}</p>
         <div className="radio-group">
-        <Radio id={id} value="-2" validationRules={validationRules} label={label} />
-        <Radio id={id} value="-1" validationRules={validationRules} label={label} />
-        <Radio id={id} value="0" validationRules={validationRules} label={label} />
-        <Radio id={id} value="1" validationRules={validationRules} label={label} />
-        <Radio id={id} value="2" validationRules={validationRules} label={label} />
+        <Radio id={id} value="-2" validationRules={validationRules} />
+        <Radio id={id} value="-1" validationRules={validationRules} />
+        <Radio id={id} value="0" validationRules={validationRules} />
+        <Radio id={id} value="+1" validationRules={validationRules} />
+        <Radio id={id} value="+2" validationRules={validationRules} />
         </div>
         <div>
           {errors?.[id] && <p className='error-message'>{errors[id]?.message?.toString()}</p>}
