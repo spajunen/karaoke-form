@@ -24,7 +24,7 @@ const SelectField: React.FC<SelectFieldProps> = ({ label, id, options, validatio
         ))}
       </select>
       <div>
-      {errors?.[id] && <p className='Error-message'>{errors[id]?.message?.toString()}</p>}</div>
+      {errors?.[id] && <p className='error-message'>{errors[id]?.message?.toString()}</p>}</div>
     </div>
   );
 };

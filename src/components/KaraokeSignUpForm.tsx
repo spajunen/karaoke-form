@@ -2,22 +2,23 @@ import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import TextField from './TextField';
 import SelectField from './SelectField';
+import RadioGroup from './RadioGroup';
 
 interface FormInputs {
   name: string;
   song: string;
+  soundKey: string;
 }
 
 const KaraokeSignUpForm: React.FC = () => {
   const methods = useForm<FormInputs>();
-
   const [message, setMessage] = useState<string>("");
 
   const onSubmit = (data: FormInputs) => {
-    console.log(data); // Here, you can send the form data to your server
+    console.log(data); 
     setMessage("Kiitos ilmoittautumisesta");
     setTimeout(() => {
-      methods.reset(); // Reset form after submission
+      methods.reset(); 
       setMessage("");
     }, 2000);
   };
@@ -47,7 +48,8 @@ const KaraokeSignUpForm: React.FC = () => {
             id="song"
             options={songOptions}
             validationRules={{ required: 'Valitse biisi' }}
-          />  
+          />
+          <RadioGroup id="soundKey" label="Valitse sävellaji*" validationRules={{ required: 'Valitse sävellaji' }}/>
           <button type="submit">
             Ilmoittaudu
           </button>
