@@ -5,7 +5,7 @@ interface CheckBoxProps {
     id: string;
     validationRules: Record<string, unknown>;
   }
-// Checkbox component
+  
 const CheckBox: React.FC<CheckBoxProps> = ({ label, id, validationRules }) => {
     const { register, formState: { errors } } = useFormContext();
 
